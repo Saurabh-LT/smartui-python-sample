@@ -13,6 +13,10 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+  env:
+    LT_USERNAME: $(LT_ACCESS_KEY) # set username in ENV variable
+    LT_ACCESS_KEY: $(LT_USERNAME) # set username in ENV variable
+
 - script: |
     pip install selenium
     python test.py
