@@ -14,7 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    export LT_USERNAME=$(LT_ACCESS_KEY)
+    export LT_USERNAME=$(LT_USERNAME)
     export LT_ACCESS_KEY=$(LT_ACCESS_KEY)
     pip install selenium
     python test.py
