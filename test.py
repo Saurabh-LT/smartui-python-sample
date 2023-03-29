@@ -24,6 +24,8 @@ class FirstSampleTest(unittest.TestCase):
             # Build name for smartUI(optional)
             # "smartUI.build" : "buildName"
         }
+        print("Hub " + hub)
+        print("AccessKey : " + access_key)
         self.driver = webdriver.Remote(
             command_executor="https://{}:{}@{}".format(
                 username, access_key,hub),
