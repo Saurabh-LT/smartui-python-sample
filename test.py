@@ -6,7 +6,7 @@ import os
 username = os.getenv("LT_USERNAME")  # Replace the username
 access_key = os.getenv("LT_ACCESS_KEY")  # Replace the access key
 hub = os.getenv("hub_URL")  # hub
-build_name = os.getenv("build_name") # buildName
+build_name = os.getenv("LT_BUILD_NAME") # buildName
 
 
 class FirstSampleTest(unittest.TestCase):
