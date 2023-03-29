@@ -25,7 +25,7 @@ class FirstSampleTest(unittest.TestCase):
             # "smartUI.build" : "buildName"
         }
         self.driver = webdriver.Remote(
-            command_executor="https://{}:{}@{}}".format(
+            command_executor="https://{}:{}@{}".format(
                 username, access_key,hub),
             desired_capabilities={"LT:Options": desired_caps})
 
