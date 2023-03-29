@@ -1,0 +1,19 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    export hub_URL=$(Stage_hub_URL)
+    export LT_USERNAME=$(LT_USERNAME)
+    export LT_ACCESS_KEY=$(stage_LT_ACCESS_KEY)
+    pip install selenium
+    python test.py
+  displayName: 'Running python job for smartUI'
