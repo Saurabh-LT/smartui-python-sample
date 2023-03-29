@@ -14,8 +14,8 @@ steps:
   displayName: 'Run a one-line script'
 
   env:
-    LT_USERNAME: $(LT_ACCESS_KEY) # set username in ENV variable
-    LT_ACCESS_KEY: $(LT_USERNAME) # set username in ENV variable
+    LT_USERNAME: $(LT_USERNAME) # set username in ENV variable
+    LT_ACCESS_KEY: $(LT_ACCESS_KEY) # set username in ENV variable
 
 - script: |
     pip install selenium
