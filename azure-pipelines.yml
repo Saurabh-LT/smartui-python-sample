@@ -10,9 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
     export LT_USERNAME=$(LT_USERNAME)
     export LT_ACCESS_KEY=$(LT_ACCESS_KEY)
