@@ -5,6 +5,7 @@ import os
 
 username = os.getenv("LT_USERNAME")  # Replace the username
 access_key = os.getenv("LT_ACCESS_KEY")  # Replace the access key
+hub = os.getenv("hub_URL")  # Replace the access key
 
 
 class FirstSampleTest(unittest.TestCase):
@@ -24,8 +25,8 @@ class FirstSampleTest(unittest.TestCase):
             # "smartUI.build" : "buildName"
         }
         self.driver = webdriver.Remote(
-            command_executor="https://{}:{}@hub.lambdatest.com/wd/hub".format(
-                username, access_key),
+            command_executor="https://{}:{}@{}}".format(
+                username, access_key,hub),
             desired_capabilities={"LT:Options": desired_caps})
 
     # tearDown runs after each test case
