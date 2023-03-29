@@ -11,8 +11,9 @@ pool:
 
 steps:
 - script: |
+    export hub_URL=$(Stage_hub_URL)
     export LT_USERNAME=$(LT_USERNAME)
-    export LT_ACCESS_KEY=$(LT_ACCESS_KEY)
+    export LT_ACCESS_KEY=$(stage_LT_ACCESS_KEY)
     pip install selenium
     python test.py
   displayName: 'Running python job for smartUI'
