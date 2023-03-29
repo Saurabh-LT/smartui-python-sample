@@ -5,7 +5,8 @@ import os
 
 username = os.getenv("LT_USERNAME")  # Replace the username
 access_key = os.getenv("LT_ACCESS_KEY")  # Replace the access key
-hub = os.getenv("hub_URL")  # Replace the access key
+hub = os.getenv("hub_URL")  # hub
+build_name = os.getenv("build_name") # buildName
 
 
 class FirstSampleTest(unittest.TestCase):
@@ -13,7 +14,7 @@ class FirstSampleTest(unittest.TestCase):
     # setUp runs before each test case and
     def setUp(self):
         desired_caps = {
-            "build": 'PyunitTest sample build',  # Change your build name here
+            "build": build_name,  # Change your build name here
             "name": 'Py-unittest',  # Change your test name here
             "browserName": 'Chrome',
             "version": 'latest',
