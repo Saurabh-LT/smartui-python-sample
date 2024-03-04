@@ -3,9 +3,10 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import os
 
-username = "<USERNAME>"  # Replace the username
-access_key = "<ACCESS_KEY>"  # Replace the access key
+username = os.getenv("LT_USERNAME")  # Replace the username
+access_key = os.getenv("LT_ACCESS_KEY")  # Replace the access key
 class FirstSampleTest(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
