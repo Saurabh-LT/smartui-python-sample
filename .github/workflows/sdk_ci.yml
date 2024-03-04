@@ -33,3 +33,4 @@ jobs:
           npx smartui --version
           npx smartui config:create smartui-web.json
           npx smartui exec python SmartUI_SDK_LT_hub.py --config smartui-web.json
+        working-directory: ${{ github.workspace }}
