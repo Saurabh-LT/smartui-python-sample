@@ -1,3 +1,4 @@
+
 name: Python SDK Wrapper CI
 on:
   pull_request:
@@ -18,22 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        if: github.event_name == 'pull_request'
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
 
-      - name: Install Dependencies
+      - name: Set up Python environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
+      - name: Install NPM Dependencies
         run: |
           npm i @lambdatest/smartui-cli
-          
-      - name: List directory contents
-        run: ls -la
-        
-      - name: Execute Python Wrapper
+
+      - name: Install Python Dependencies and Execute Python Wrapper
         run: |
           pip install lambdatest-selenium-driver
           npx smartui --version
           npx smartui config:create smartui-web.json
           npx smartui exec python SmartUI_SDK_LT_hub.py --config smartui-web.json
-        working-directory: ${{ github.workspace }}
