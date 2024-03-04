@@ -32,4 +32,4 @@ jobs:
           pip install lambdatest-selenium-driver
           npx smartui --version
           npx smartui config:create smartui-web.json
-          npx smartui exec python SmartUI_SDK_LT_hub.py --config smartui-web.json
+          npx smartui exec python ./SmartUI_SDK_LT_hub.py --config smartui-web.json
