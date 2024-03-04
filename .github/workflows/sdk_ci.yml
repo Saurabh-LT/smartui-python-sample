@@ -29,7 +29,6 @@ jobs:
 
       - name: Execute Python Wrapper
         run: |
-          cd sdk
           pip install lambdatest-selenium-driver
           npx smartui --version
           npx smartui config:create smartui-web.json
