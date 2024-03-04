@@ -26,7 +26,10 @@ jobs:
       - name: Install Dependencies
         run: |
           npm i @lambdatest/smartui-cli
-
+          
+      - name: List directory contents
+        run: ls -la
+        
       - name: Execute Python Wrapper
         run: |
           pip install lambdatest-selenium-driver
