@@ -23,18 +23,19 @@ class FirstSampleTest(unittest.TestCase):
             options = webdriver.ChromeOptions()
         options.browser_version = "latest"
         options.platform_name = "macOS Sonoma"
-        lt_options = {};
-        lt_options["resolution"] = "1024x768";
-        lt_options["project"] = "Python_SDK";
-        lt_options["name"] = "Python_Build";
+        lt_options = {}
+        lt_options["resolution"] = "1024x768"
+        lt_options["project"] = "Python_SDK"
+        lt_options['build'] = "SmartUI-Python-SDK"
+        lt_options["name"] = "Python_Build_" + browser_name
         lt_options["w3c"] = True;
-        lt_options["plugin"] = "python-python";
+        lt_options["plugin"] = "python-python"
         lt_options["console"] = True
         lt_options["network"] = True
         lt_options["selenium_version"] = "4.0.0"
-        options.set_capability('LT:Options', lt_options);
+        options.set_capability('LT:Options', lt_options)
         self.driver = webdriver.Remote(
-            command_executor="http://{}:{}@stage-hub.lambdatestinternal.com/wd/hub".format(
+            command_executor="http://{}:{}@hub.lambdatest.com/wd/hub".format(
                 username, access_key),
             options=options
         )
